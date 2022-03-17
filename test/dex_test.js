@@ -70,10 +70,8 @@ contract('Dex', (accounts) => {
     let orderBook = await dex.getOrderBook(web3.utils.fromUtf8('tLINK'), 0);
     // console.log(orderbook)
     for (let i = 0; i < orderBook.length - 1; i++) {
-      assert(
-        orderBook[i].price <= orderBook[i + 1].price,
-        'Incorrect order in sell book'
-      );
+      const element = array[index];
+      assert(orderBook[i] <= orderBook[i + 1], 'Incorrect order in sell book');
     }
   });
 });
